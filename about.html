@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - Art Museum</title>
+
+<style>
+
+/* ---------- RESET ---------- */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:linear-gradient(to bottom,#f7fbfd,#eaf4f8);
+color:#333;
+}
+
+
+/* NAVBAR */
+.navbar{
+    position: fixed;
+    width:100%;
+    padding:20px 80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    
+    background: rgba(0, 128, 128, 0.35); /* Soft teal glass */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    z-index:1000;
+}
+
+.logo{
+    color:white;
+    font-size:22px;
+    font-weight:600;
+}
+
+.navbar ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+.navbar ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:400;
+    transition:0.3s;
+}
+
+.navbar ul li a:hover{
+    color:#ff7a59;  
+}
+
+/* ---------- ABOUT SECTION ---------- */
+
+.about-section{
+padding:160px 10% 80px;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+}
+
+
+/* ---------- ABOUT CARD ---------- */
+
+.about-card{
+max-width:750px;
+background:white;
+padding:50px;
+border-radius:18px;
+box-shadow:0 12px 35px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.about-card:hover{
+transform:translateY(-5px);
+box-shadow:0 20px 45px rgba(0,0,0,0.12);
+}
+
+.about-card h1{
+font-size:38px;
+margin-bottom:20px;
+color:#1c3b50;
+}
+
+.about-card p{
+font-size:16px;
+line-height:1.7;
+color:#555;
+margin-bottom:18px;
+}
+
+
+/* ---------- FOOTER ---------- */
+
+footer{
+text-align:center;
+padding:30px;
+background:white;
+margin-top:80px;
+color:#666;
+box-shadow:0 -3px 10px rgba(0,0,0,0.05);
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width:600px){
+
+.about-card{
+padding:30px;
+}
+
+.about-card h1{
+font-size:28px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+<div class="logo">Art Museum</div>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="paintings.html">Paintings</a></li>
+<li><a href="sculptures.html">Sculptures</a></li>
+<li><a href="photography.html">Photography</a></li>
+<li><a href="about.html">About</a></li>
+</ul>
+
+</nav>
+
+<section class="about-section">
+
+<div class="about-card">
+
+<h1>About Our Art Museum</h1>
+
+<p>
+Welcome to the <b>Art Museum</b> — a digital space dedicated to showcasing
+the world’s most celebrated artistic masterpieces across paintings,
+sculptures, and photography.
+</p>
+
+<p>
+Our mission is to inspire creativity and appreciation for art by making
+timeless masterpieces accessible to everyone. Through this virtual
+gallery, visitors can explore iconic works and learn about the artists
+who shaped art history.
+</p>
+
+<p>
+From Renaissance paintings to modern photography, the Art Museum
+celebrates creativity, culture, and the beauty of artistic expression.
+</p>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Art Museum
+</footer>
+
+</body>
+</html>

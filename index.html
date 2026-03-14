@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Art Museum</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* NAVBAR */
+.navbar{
+    position: fixed;
+    width:100%;
+    padding:20px 80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    
+    background: rgba(0, 128, 128, 0.35); /* Soft teal glass */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    z-index:1000;
+}
+
+.logo{
+    color:white;
+    font-size:22px;
+    font-weight:600;
+}
+
+.navbar ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+.navbar ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:400;
+    transition:0.3s;
+}
+
+.navbar ul li a:hover{
+    color:#ff7a59;  
+}
+/* HERO */
+.hero{
+    height:100vh;
+    background: url("artbackground.png") center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+    color:white;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: rgba(0,0,0,0.4);
+}
+
+.hero-content{
+    position:relative;
+    z-index:1;
+    max-width:600px;
+}
+
+.hero h1{
+    font-size:48px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+/* BUTTON */
+.btn{
+    padding:12px 35px;
+    background:#ff7a59;
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#ff5733;
+    transform:scale(1.05);
+}
+
+/* ART SECTION */
+.art-section{
+    padding:80px 10%;
+    background:white;
+}
+
+.art-container{
+    display:flex;
+    gap:50px;
+    align-items:center;
+}
+
+.art-image{
+    flex:1;
+    height:300px;
+    background: url("artbackground1.jpg") center/cover no-repeat;
+    border-radius:20px;
+}
+
+.art-text{
+    flex:1;
+}
+
+.art-text h2{
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.art-text p{
+    color:#555;
+    line-height:1.6;
+}
+
+/* REVIEW SECTION */
+.reviews-section{
+    padding:100px 80px;
+    background: linear-gradient(to right, #dff6f6, #f0fbfb);
+    text-align:center;
+}
+
+.review h2{
+    font-size:36px;
+    margin-bottom:50px;
+    color:#0f4c5c;
+}
+
+.review-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.review-card{
+    background: rgba(255,255,255,0.5);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding:30px;
+    border-radius:20px;
+    width:300px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition:0.4s ease;
+}
+
+.review-card:hover{
+    transform: translateY(-10px);
+}
+
+.review-card p{
+    font-size:15px;
+    color:#333;
+    margin-bottom:15px;
+}
+
+.review-card h4{
+    color:#ff7a59; 
+}
+
+/* CONTACT SECTION */
+.contact-section{
+    padding:100px 80px;
+    background: linear-gradient(to right, #e0f7f7, #ffffff);
+    text-align:center;
+}
+
+.contact h2{
+    font-size:36px;
+    margin-bottom:40px;
+    color:#0f4c5c;
+}
+
+.contact form{
+    max-width:500px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.contact input,
+.contact textarea{
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    font-size:14px;
+    outline:none;
+}
+
+.contact textarea{
+    resize:none;
+    height:120px;
+}
+
+.contact button{
+    padding:14px;
+    border:none;
+    border-radius:30px;
+    background:#ff7a59;
+    color:white;
+    font-size:15px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.contact button:hover{
+    background:#ff5722;
+}
+
+/* FOOTER */
+footer{
+    padding:40px 80px;
+    background: linear-gradient(to right, #dff6f6, #f0fbfb);
+    text-align:center;
+    color:#0f4c5c;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+footer p{
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+.comments-section{
+padding:80px;
+background:#f5fbfb;
+text-align:center;
+}
+
+.comment-form{
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.comment-form input,
+.comment-form textarea{
+padding:12px;
+border-radius:10px;
+border:1px solid #ccc;
+}
+
+.comment-form button{
+padding:12px;
+border:none;
+background:#ff7a59;
+color:white;
+border-radius:20px;
+cursor:pointer;
+}
+
+.comment-card{
+background:white;
+padding:15px;
+margin:15px auto;
+max-width:500px;
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.comment-card h4{
+color:#ff7a59;
+margin-bottom:5px;
+}
+
+
+    </style>
+
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">Art Museum</div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="paintings.html">Paintings</a></li>
+        <li><a href="sculptures.html">Sculptures</a></li>
+        <li><a href="photography.html">Photography</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Discover Timeless Masterpieces</h1>
+        <p>Explore world-famous paintings, sculptures and photography.</p>
+        <a href="paintings.html" class="btn">Explore Collection</a>
+    </div>
+</section>
+
+<!-- ART SECTION (Pinterest style split layout) -->
+<section class="art-section">
+    <div class="art-container">
+
+        <div class="art-image"></div>
+
+        <div class="art-text">
+            <h2>Paintings & Galleries</h2>
+            <p>
+                Explore curated collections from classic to contemporary artists.
+                Experience art in a modern and elegant digital space.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section">
+    <h2>Visitor Reviews</h2>
+
+    <div class="review-box">
+        <p>"A beautiful digital collection of iconic artworks!"</p>
+        <span>- Art Enthusiast</span>
+    </div>
+
+    <div class="review-box">
+        <p>"Clean design and very informative."</p>
+        <span>- Museum Visitor</span>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section">
+    <h2>Contact Us</h2>
+    <p>Email: artmuseum@email.com</p>
+    <p>Phone: +91 98765 43210</p>
+    <p>Location: Virtual Art Gallery, India</p>
+</section>
+
+<section id="comments" class="comments-section">
+
+<h2>Visitor Comments</h2>
+
+<div class="comment-form">
+<input type="text" id="nameInput" placeholder="Your Name">
+<textarea id="commentInput" placeholder="Write your comment..."></textarea>
+<button onclick="addComment()">Post Comment</button>
+</div>
+
+<div id="commentList"></div>
+
+</section>
+<script>
+
+function addComment(){
+
+let name=document.getElementById("nameInput").value;
+let comment=document.getElementById("commentInput").value;
+
+if(name==="" || comment===""){
+alert("Please enter name and comment");
+return;
+}
+
+let commentBox=document.createElement("div");
+commentBox.classList.add("comment-card");
+
+commentBox.innerHTML="<h4>"+name+"</h4><p>"+comment+"</p>";
+
+document.getElementById("commentList").appendChild(commentBox);
+
+document.getElementById("nameInput").value="";
+document.getElementById("commentInput").value="";
+
+}
+
+</script>
+
+<footer>
+    <p>© 2026 Art Museum</p>
+</footer>
+
+
+</body>
+</html>
