@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Art Gallery</title>
+
+<style>
+
+/* ---------- RESET ---------- */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:linear-gradient(to bottom,#f7fbfd,#eaf4f8);
+color:#333;
+}
+
+
+/* NAVBAR */
+.navbar{
+    position: fixed;
+    width:100%;
+    padding:20px 80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    
+    background: rgba(0, 128, 128, 0.35); /* Soft teal glass */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    z-index:1000;
+}
+
+.logo{
+    color:white;
+    font-size:22px;
+    font-weight:600;
+}
+
+.navbar ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+.navbar ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:400;
+    transition:0.3s;
+}
+
+.navbar ul li a:hover{
+    color:#ff7a59;  
+}
+
+/* ---------- COLLECTION ---------- */
+
+.collection{
+padding:130px 8% 80px;
+}
+
+.collection h1{
+text-align:center;
+font-size:40px;
+margin-bottom:60px;
+color:#1c3b50;
+}
+
+
+/* ---------- PINTEREST GRID ---------- */
+
+.grid{
+column-count:3;
+column-gap:30px;
+}
+
+
+/* ---------- CARD ---------- */
+
+.card{
+position:relative;
+background:white;
+border-radius:18px;
+overflow:hidden;
+margin-bottom:30px;
+break-inside:avoid;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+
+/* ---------- IMAGE ---------- */
+
+.card img{
+width:100%;
+display:block;
+transition:0.4s;
+}
+
+.card:hover img{
+transform:scale(1.05);
+}
+
+
+/* ---------- TAG ---------- */
+
+.tag{
+position:absolute;
+top:15px;
+left:15px;
+background:rgba(255,255,255,0.9);
+color:#1c3b50;
+padding:6px 14px;
+font-size:12px;
+border-radius:20px;
+font-weight:600;
+z-index:2;
+}
+
+
+/* ---------- HOVER OVERLAY ---------- */
+
+.overlay{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+color:white;
+display:flex;
+align-items:flex-end;
+padding:20px;
+opacity:0;
+transition:0.4s;
+}
+
+.card:hover .overlay{
+opacity:1;
+}
+
+.overlay h3{
+font-size:20px;
+}
+
+
+/* ---------- CARD INFO ---------- */
+
+.card-info{
+padding:18px;
+}
+
+.card-info h3{
+font-size:18px;
+margin-bottom:6px;
+color:#1e4d63;
+}
+
+.card-info p{
+font-size:14px;
+color:#555;
+margin-bottom:4px;
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width:1000px){
+
+.grid{
+column-count:2;
+}
+
+}
+
+@media(max-width:600px){
+
+.grid{
+column-count:1;
+}
+
+.collection h1{
+font-size:30px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<div class="logo">Art Museum</div>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="paintings.html">Paintings</a></li>
+<li><a href="sculptures.html">Sculptures</a></li>
+<li><a href="photography.html">Photography</a></li>
+<li><a href="about.html">About</a></li>
+</ul>
+</nav>
+
+
+<section class="collection">
+
+<h1>PAINTINGS</h1>
+
+<div class="grid">
+
+
+<!-- Mona Lisa -->
+
+<div class="card">
+<span class="tag">Portrait</span>
+<img src="monalisa.webp">
+<div class="overlay"><h3>Mona Lisa</h3></div>
+
+<div class="card-info">
+<p><b>Artist:</b> Leonardo da Vinci (1503)</p>
+<p>Known for her mysterious smile and realism.</p>
+</div>
+</div>
+
+
+<!-- Starry Night -->
+
+<div class="card">
+<span class="tag">Landscape</span>
+<img src="starrynight.jpg">
+<div class="overlay"><h3>Starry Night</h3></div>
+
+<div class="card-info">
+<p><b>Artist:</b> Vincent van Gogh (1889)</p>
+<p>Emotional swirling night sky.</p>
+</div>
+</div>
+
+
+<!-- Guernica -->
+
+<div class="card">
+<span class="tag">Abstract</span>
+<img src="PicassoGuernica.jpg">
+<div class="overlay"><h3>Guernica</h3></div>
+
+<div class="card-info">
+<p><b>Artist:</b> Pablo Picasso (1937)</p>
+<p>Powerful anti-war painting.</p>
+</div>
+</div>
+
+
+<!-- Last Supper -->
+
+<div class="card">
+<span class="tag">Religious</span>
+<img src="lastsupper.jpg">
+<div class="overlay"><h3>The Last Supper</h3></div>
+
+<div class="card-info">
+<p><b>Artist:</b> Leonardo da Vinci (1495–1498)</p>
+<p>Depicts Jesus announcing betrayal.</p>
+</div>
+</div>
+
+
+<!-- The Scream -->
+
+<div class="card">
+<span class="tag">Expressionism</span>
+<img src="thescream.jpg">
+<div class="overlay"><h3>The Scream</h3></div>
+
+<div class="card-info">
+<p><b>Artist:</b> Edvard Munch (1893)</p>
+<p>Expression of anxiety and emotion.</p>
+</div>
+</div>
+
+
+<!-- Girl with Pearl Earring -->
+
+<div class="card">
+<span class="tag">Portrait</span>
+<img src="girlwithapearlearring.jpg">
+<div class="overlay"><h3>Girl with a Pearl Earring</h3></div>
+
+<div class="card-info">
+<p><b>Artist:</b> Johannes Vermeer (1665)</p>
+<p>Often called the Dutch Mona Lisa.</p>
+</div>
+</div>
+
+<!-- Water Lilies -->
+
+<div class="card">
+<span class="tag">Impressionism</span>
+<img src="waterlilies.jpg">
+<div class="overlay"><h3>Water Lilies</h3></div>
+
+<div class="card-info">
+<p><b>Artist:</b> Claude Monet (1916)</p>
+<p>Part of Monet’s famous series inspired by his garden pond.</p>
+</div>
+</div>
+
+<!-- The Garden of Earthly Delights -->
+
+<div class="card">
+<span class="tag">Renaissance</span>
+<img src="The_Garden_of_earthly_delights.jpg">
+<div class="overlay"><h3>The Garden of Earthly Delights</h3></div>
+
+<div class="card-info">
+<p><b>Artist:</b> Hieronymus Bosch (1505)</p>
+<p>A surreal triptych showing paradise, earthly pleasures, and hell.</p>
+</div>
+</div>
+
+<!-- Liberty Leading the People -->
+
+<div class="card">
+<span class="tag">Romanticism</span>
+<img src="Liberty-Leading-the-People.webp">
+<div class="overlay"><h3>Liberty Leading the People</h3></div>
+
+<div class="card-info">
+<p><b>Artist:</b> Eugène Delacroix (1830)</p>
+<p>A powerful symbol of freedom during the French Revolution.</p>
+</div>
+</div>
+
+<!-- The Raft of the Medusa -->
+
+<div class="card">
+<span class="tag">Romanticism</span>
+<img src="theraftofthemedusa.jpg">
+<div class="overlay"><h3>The Raft of the Medusa</h3></div>
+
+<div class="card-info">
+<p><b>Artist:</b> Théodore Géricault (1819)</p>
+<p>A dramatic painting based on a real shipwreck tragedy.</p>
+</div>
+</div>
+
+<!-- The School of Athens -->
+
+<div class="card">
+<span class="tag">Renaissance</span>
+<img src="theschool.jpg">
+<div class="overlay"><h3>The School of Athens</h3></div>
+
+<div class="card-info">
+<p><b>Artist:</b> Raphael (1511)</p>
+<p>Depicts famous philosophers like Plato and Aristotle.</p>
+</div>
+</div>
+
+<!-- The Hay Wain -->
+
+<div class="card">
+<span class="tag">Landscape</span>
+<img src="thehaywain.jpg">
+<div class="overlay"><h3>The Hay Wain</h3></div>
+
+<div class="card-info">
+<p><b>Artist:</b> John Constable (1821)</p>
+<p>A beautiful depiction of rural countryside in England.</p>
+</div>
+</div>
+
+
+
+</section>
+
+</body>
+</html>

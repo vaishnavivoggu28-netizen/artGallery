@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photography</title>
+
+<style>
+
+/* ---------- RESET ---------- */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:linear-gradient(to bottom,#f7fbfd,#eaf4f8);
+color:#333;
+}
+
+
+/* NAVBAR */
+.navbar{
+    position: fixed;
+    width:100%;
+    padding:20px 80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    
+    background: rgba(0, 128, 128, 0.35); /* Soft teal glass */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    z-index:1000;
+}
+
+.logo{
+    color:white;
+    font-size:22px;
+    font-weight:600;
+}
+
+.navbar ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+.navbar ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:400;
+    transition:0.3s;
+}
+
+.navbar ul li a:hover{
+    color:#ff7a59;  
+}
+
+
+/* ---------- COLLECTION ---------- */
+
+.collection{
+padding:130px 8% 80px;
+}
+
+.collection h1{
+text-align:center;
+font-size:40px;
+margin-bottom:60px;
+color:#1c3b50;
+}
+
+
+/* ---------- PINTEREST GRID ---------- */
+
+.grid{
+column-count:3;
+column-gap:30px;
+}
+
+
+/* ---------- CARD ---------- */
+
+.card{
+position:relative;
+background:white;
+border-radius:18px;
+overflow:hidden;
+margin-bottom:30px;
+break-inside:avoid;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+
+
+/* ---------- IMAGE ---------- */
+
+.card img{
+width:100%;
+display:block;
+transition:0.4s;
+}
+
+.card:hover img{
+transform:scale(1.05);
+}
+
+
+/* ---------- TAG ---------- */
+
+.tag{
+position:absolute;
+top:15px;
+left:15px;
+background:rgba(255,255,255,0.9);
+color:#1c3b50;
+padding:6px 14px;
+font-size:12px;
+border-radius:20px;
+font-weight:600;
+z-index:2;
+}
+
+
+/* ---------- HOVER OVERLAY ---------- */
+
+.overlay{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+color:white;
+display:flex;
+align-items:flex-end;
+padding:20px;
+opacity:0;
+transition:0.4s;
+}
+
+.card:hover .overlay{
+opacity:1;
+}
+
+.overlay h3{
+font-size:20px;
+}
+
+
+/* ---------- CARD INFO ---------- */
+
+.card-info{
+padding:18px;
+}
+
+.card-info p{
+font-size:14px;
+color:#555;
+margin-bottom:4px;
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width:1000px){
+
+.grid{
+column-count:2;
+}
+
+}
+
+@media(max-width:600px){
+
+.grid{
+column-count:1;
+}
+
+.collection h1{
+font-size:30px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+<div class="logo">Art Museum</div>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="paintings.html">Paintings</a></li>
+<li><a href="sculptures.html">Sculptures</a></li>
+<li><a href="photography.html">Photography</a></li>
+<li><a href="about.html">About</a></li>
+</ul>
+</nav>
+
+<section class="collection">
+
+<h1>PHOTOGRAPHEY</h1>
+
+<div class="grid">
+
+<div class="card">
+<span class="tag">Landscape</span>
+<img src="moonrise.webp">
+<div class="overlay"><h3>Moonrise</h3></div>
+<div class="card-info">
+<p><b>Photographer:</b> Ansel Adams</p>
+<p>Iconic black-and-white landscape.</p>
+</div>
+</div>
+
+<div class="card">
+<span class="tag">Documentary</span>
+<img src="mother.jpg">
+<div class="overlay"><h3>Migrant Mother</h3></div>
+<div class="card-info">
+<p><b>Photographer:</b> Dorothea Lange</p>
+<p>Historic image of the Great Depression.</p>
+</div>
+</div>
+
+<div class="card">
+<span class="tag">Landscape</span>
+<img src="tetonsandsnakeriver.jpg">
+<div class="overlay"><h3>The Tetons and the Snake River</h3></div>
+<div class="card-info">
+<p>Iconic black-and-white landscape photograph by Ansel Adams.</p>
+</div>
+</div>
+
+<div class="card">
+<span class="tag">Minimalism</span>
+<img src="rhein_II.jpg">
+<div class="overlay"><h3>Rhein II</h3></div>
+<div class="card-info">
+<p>Minimalist large-scale landscape photograph by Andreas Gursky.</p>
+</div>
+</div>
+
+<div class="card">
+<span class="tag">Modern</span>
+<img src="99.jpg">
+<div class="overlay"><h3>99 Cent II Diptychon</h3></div>
+<div class="card-info">
+<p>Color-saturated supermarket photograph by Andreas Gursky.</p>
+</div>
+</div>
+
+<div class="card">
+<span class="tag">Still Life</span>
+<img src="pepper.jpg">
+<div class="overlay"><h3>Pepper No. 30</h3></div>
+<div class="card-info">
+<p>Striking still-life photograph by Edward Weston.</p>
+</div>
+</div>
+
+<div class="card">
+<span class="tag">Modernism</span>
+<img src="thesteerage.jpg">
+<div class="overlay"><h3>The Steerage</h3></div>
+<div class="card-info">
+<p>Historic modernist photograph by Alfred Stieglitz.</p>
+</div>
+</div>
+
+<div class="card">
+<span class="tag">Fashion</span>
+<img src="dovimawithelephants.webp">
+<div class="overlay"><h3>Dovima with Elephants</h3></div>
+<div class="card-info">
+<p>Iconic fashion photograph by Richard Avedon.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+</body>
+</html>
